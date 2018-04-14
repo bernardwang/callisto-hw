@@ -1,23 +1,20 @@
 <template>
   <div id="app">
-    <img src="./assets/Callisto_logo.svg">
+    <NavBar />
     <router-view/>
   </div>
 </template>
 
 <script>
+import NavBar from '@/components/NavBar'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    NavBar
+  }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

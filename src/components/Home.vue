@@ -1,12 +1,17 @@
 <template>
-  <div>
-    <h1>Home</h1>
-  </div>
+  <main>
+    <HomeSplash/>
+  </main>
 </template>
 
 <script>
+import HomeSplash from '@/components/HomeSplash'
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    HomeSplash,
+  }
 }
 </script>
 
