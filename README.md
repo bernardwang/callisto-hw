@@ -1,8 +1,14 @@
-# callisto
+**[callisto-hw](https://bernard.wang/callisto-hw)**
+==============
 
-> A Vue.js project
+## Development Notes
 
-## Build Setup
+This website is written in Vue.js, specifically using the Vue Webpack [boilerplate](https://vuejs-templates.github.io/webpack/). I chose this boilerplate because this boilerplate has many features built in, such as SCSS, Autoprefixer for browser cross-compatibility, Babel for ES2015+, and ESLint. I also find Vue.js to be very similar to React while being slightly lighter and faster to prototype with.
+
+Because this assignment is a static page, this boilerplate might be unnecessarily feature rich. However, I was already familiar with it, and I felt this project structure demonstrates how a page like this could scale into a fully featured website.
+
+## Usage
+After running `npm install`, the following scripts are provided by the Vue Webpack [template](https://vuejs-templates.github.io/webpack/)
 
 ``` bash
 # install dependencies
