@@ -75,17 +75,24 @@ export default {
   margin: 0 -0.1rem 0 -0.1rem;
   padding: 0 1.5rem 1rem 1.5rem;
   display: inline-block;
+  color: $cl-white;
   border-bottom: 1px solid $cl-white;
-  text-align: center;
+  //transition: color $time-fast, border $time-fast;
+  &:hover {
+    border-bottom: 1px solid $cl-text-secondary;
+    color: $cl-text-secondary;
+  }
   @include breakpoint(large) {
     width: 10rem;
   }
 }
 .nav-link {
-  color: $cl-white;
+  color: inherit;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
+  text-align: center;
+  transition: color $time-fast;
 }
 .link-text {
   font-size: 0.8rem;

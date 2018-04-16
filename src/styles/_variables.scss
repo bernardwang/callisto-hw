@@ -15,12 +15,17 @@ $bp-small: 30rem;
   }
 }
 
-// Color variables
+// Colors
 $cl-white: #ffffff;
 
 $cl-text-primary: #252537;
 $cl-text-secondary: #B8A9A3;
 $cl-text-accent: #385C6C;
 
-$cl-bg-primary: $cl-white;
+$cl-bg-light: $cl-white;
 $cl-bg-dark: #464D55;
+
+// Transistion times
+$time-fast: 0.3s;
+$time-normal: 0.5s;
+$time-slow: 1s;

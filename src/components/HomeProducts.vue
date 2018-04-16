@@ -24,9 +24,9 @@
           Support services and local resources
         </p>
         <hr class="divider"/>
-        <button class="btn">
+        <Button class="button" variant="accent">
           More about Callisto Campus
-        </button>
+        </Button>
       </div>
       <div class="card campus">
         <h5 class="label">
@@ -48,17 +48,20 @@
           Support services and local resources
         </p>
         <hr class="divider"/>
-        <button class="btn">
+        <Button class="button" variant="accent">
           More about Callisto Expansion
-        </button>
+        </Button>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import Button from '@/components/core/Button'
+
 export default {
-  name: 'HomeProducts'
+  name: 'HomeProducts',
+  components: { Button }
 }
 </script>
 
@@ -86,9 +89,9 @@ export default {
 .card {
   position:relative;
   margin: 1rem;
-  padding: 2rem;
+  padding: 2rem 3rem 2rem 3rem;
   width: 100%;
-  max-width: 25rem;
+  max-width: 23rem;
   background-color: $cl-white;
   border-radius: 2px;
   text-align: center;
@@ -108,15 +111,21 @@ export default {
   font-weight: 500;
 }
 .feat {
+  margin-top: 2rem;
   line-height: 2;
 }
 .divider {
+  border: 0.5px solid #ddd;
   position: absolute;
   width: 95%;
   left: 2.5%;
-  bottom: 4rem;
+  bottom: 6rem;
 }
-.btn {
+.button {
+  width: 100%;
   margin-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 3px;
 }
 </style>

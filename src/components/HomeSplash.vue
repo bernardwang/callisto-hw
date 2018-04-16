@@ -9,9 +9,9 @@
         <h3>
           We are stronger. Together.
         </h3>
-        <button>
+        <Button variant="primary">
           Learn more
-        </button>
+        </Button>
       </div>
       <div class="text right">
         <p class="right-quote">
@@ -19,15 +19,22 @@
         </p>
       </div>
     </div>
+    <div class="scroll">
+      <p class="scroll-text">
+        Scroll down
+      </p>
+    </div>
   </section>
 </template>
 
 <script>
+import Button from '@/components/core/Button'
 import NavBar from '@/components/NavBar'
 
 export default {
   name: 'HomeSplash',
   components: {
+    Button,
     NavBar
   }
 }
@@ -61,7 +68,7 @@ export default {
 }
 .left {
   width: 50%;
-  margin-top: 18rem;
+  margin-top: 16rem;
 }
 .text {
   @include breakpoint(medium) {
@@ -88,5 +95,23 @@ export default {
       border: none;
     }
   }
+}
+.scroll {
+  position: absolute;
+  width: 3rem;
+  left: 41%;
+  bottom: 0rem;
+  transition: transform $time-normal;
+  &:hover {
+    transform: translateY(4px)
+  }
+}
+.scroll-text {
+  transform: rotate(-90deg);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.7rem;
+  text-align: center;
+  cursor: pointer;
 }
 </style>

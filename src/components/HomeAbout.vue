@@ -7,9 +7,9 @@
       <p class="desc">
         Callisto is a non-profit organization that develops technology to combat sexual assault and harassment. Our technology is designed to empower survivors with options to seek support and identify repeat perpetrators. Callisto Campus is our flagship online system, which enables student survivors to document and report sexual assault and help identify repeat perpetrators.
       </p>
-      <button class="btn">
+      <Button class="button" variant="accent">
         Learn more
-      </button>
+      </Button>
     </div>
     <div class="section what">
       <h2 class="title">
@@ -18,16 +18,19 @@
       <p class="desc">
         Callisto's platform provides victims with trauma sensitive options for reporting sexual assault and harrassment. Currently in place across 13 partner campuses, Callisto is expanding in 2018 to serve professional industries.
       </p>
-      <button class="btn">
+      <Button class="button" variant="accent">
         Learn more
-      </button>
+      </Button>
     </div>
   </section>
 </template>
 
 <script>
+import Button from '@/components/core/Button'
+
 export default {
-  name: 'HomeAbout'
+  name: 'HomeAbout',
+  components: { Button }
 }
 </script>
 
@@ -105,7 +108,7 @@ export default {
 .desc {
   padding-left: 3rem;
 }
-.btn {
+.button {
   float: right;
   margin-top: 1rem;
 }
