@@ -6,22 +6,34 @@
     <nav class="nav" aria-label="Main Menu">
       <ul>
         <li class="nav-item">
-          <router-link class="nav-link" to="/get-involved">Get Involved</router-link>
+          <router-link class="nav-link" to="/get-involved">
+            <h6 class="link-text"> Get Involved </h6>
+          </router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/who-we-are">Who We Are</router-link>
+          <router-link class="nav-link" to="/who-we-are">
+            <h6 class="link-text"> Who We Are </h6>
+          </router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/what-we-do">What We Do</router-link>
+          <router-link class="nav-link" to="/what-we-do">
+            <h6 class="link-text"> What We Do </h6>
+          </router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/work-with-us">Work With Us</router-link>
+          <router-link class="nav-link" to="/work-with-us">
+            <h6 class="link-text"> Work With Us </h6>
+          </router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/donate">Donate</router-link>
+          <router-link class="nav-link" to="/donate">
+            <h6 class="link-text"> Donate </h6>
+          </router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/contact">Contact</router-link>
+          <router-link class="nav-link" to="/contact">
+            <h6 class="link-text"> Contact </h6>
+          </router-link>
         </li>
       </ul>
     </nav>
@@ -43,34 +55,32 @@ export default {
 
 <style scoped lang="scss">
 .navbar {
-  position: absolute;
-  width: 100vw;
-  padding: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-top: 1rem;
   display: flex;
   flex-direction: row;
   flex-wrap: none;
   justify-content: center;
 }
 .logo {
-  width: 100%;
-  height: 100%;
-  margin-left: 3rem;
   position: absolute;
+  left: 3rem;
 }
 .nav {
   border-bottom: 1px solid white;
-  padding: 0.5rem;
 }
 .nav-item {
   display: inline-block;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 .nav-link {
   color: white;
   font-weight: bold;
   text-transform: uppercase;
+  text-decoration: none;
+}
+.link-text {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
 }
 </style>
