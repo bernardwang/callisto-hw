@@ -1,12 +1,8 @@
-@media screen and (min-width: 30rem) {
-  .u-page {
-    padding-left: 10vw;
-    padding-right: 10vw;
-  }
-}
 
-@media screen and (max-width: 50rem){
-  .u-page {
+.u-page {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  @include breakpoint(medium) {
     padding-left: 5vw;
     padding-right: 5vw;
   }

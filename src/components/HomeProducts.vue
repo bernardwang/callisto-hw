@@ -63,10 +63,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/styles/_color.scss';
+@import '@/styles/_variables.scss';
 
 .products {
-  padding: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
   min-height: 30rem;
   background-color: $cl-bg-dark;
 }
@@ -85,13 +86,15 @@ export default {
 .card {
   position:relative;
   margin: 1rem;
-  margin-top: 2rem;
   padding: 2rem;
   width: 100%;
   max-width: 25rem;
   background-color: $cl-white;
   border-radius: 2px;
   text-align: center;
+  @include breakpoint(medium) {
+    margin: 1rem 0 1rem 0;
+  }
 }
 .label {
   text-transform: uppercase;

@@ -32,10 +32,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/styles/_color.scss';
+@import '@/styles/_variables.scss';
 
 .about {
-  min-height: 40rem;
+  min-height: 35rem;
+  margin: 0 2vw 0 2vw;
+  padding-bottom: 5rem;
   background-color: $cl-white;
   position: relative;
   display: flex;
@@ -43,8 +45,6 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  margin-left: 4rem;
-  margin-right: 4rem;
 
   &:before {
     content: "";
@@ -60,7 +60,27 @@ export default {
     border-left: 1px solid $cl-text-secondary;
     bottom: 0rem;
     right: 44%;
-    height: 25rem;
+    height: 26rem;
+  }
+  @include breakpoint(medium) {
+    flex-direction: column;
+    &:before, &:after {
+      border: none;
+    }
+  }
+}
+.who {
+  width: 40%;
+  padding-top: 3rem;
+  &:before {
+    content: "01";
+  }
+}
+.what {
+  width: 45%;
+  padding-top: 15rem;
+  &:before {
+    content: "02";
   }
 }
 .section {
@@ -75,19 +95,9 @@ export default {
     font-weight: bold;
     color: rgba(200,200,200,0.5);
   }
-}
-.who {
-  padding-top: 3rem;
-  width: 40%;
-  &:before {
-    content: "01";
-  }
-}
-.what {
-  padding-top: 15rem;
-  width: 45%;
-  &:before {
-    content: "02";
+  @include breakpoint(medium) {
+    width: 100%;
+    padding-top: 2rem;
   }
 }
 .title {

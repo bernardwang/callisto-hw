@@ -1,9 +1,9 @@
 <template>
   <section class="u-page splash typography">
     <NavBar />
-    <div class="splash-text">
-      <div class="title">
-        <h1 class="title-display">
+    <div class="text-container">
+      <div class="text left">
+        <h1 class="left-display">
           Tech to Combat Sexual Assault
         </h1>
         <h3>
@@ -13,8 +13,8 @@
           Learn more
         </button>
       </div>
-      <div class="quote">
-        <p class="quote-text">
+      <div class="text right">
+        <p class="right-quote">
           'why are you questioning the victim here? let's flip it. let's talk about what the predator is doing.'
         </p>
       </div>
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/styles/_color.scss';
+@import '@/styles/_variables.scss';
 
 .splash {
   min-height: 45rem;
@@ -45,18 +45,34 @@ export default {
   background-position: 25% 100%, center;
   color: $cl-white;
 }
-.splash-text {
+.text-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  @include breakpoint(medium) {
+    flex-direction: column;
+  }
 }
-.quote {
+.right {
   width: 35%;
   margin-top: 9rem;
   padding-right: 2rem;
 }
-.quote-text {
+.left {
+  width: 50%;
+  margin-top: 18rem;
+}
+.text {
+  @include breakpoint(medium) {
+    width: 100%;
+    padding: 0;
+    margin-top: 3rem;
+  }
+}
+.left-display {
+}
+.right-quote {
   position: relative;
   font-size: 1.414rem;
   &:before {
@@ -67,11 +83,10 @@ export default {
     right: -12rem;
     width: 12rem;
   }
-}
-.title {
-  width: 50%;
-  margin-top: 18rem;
-}
-.title-display {
+  @include breakpoint(medium) {
+    &:before {
+      border: none;
+    }
+  }
 }
 </style>
