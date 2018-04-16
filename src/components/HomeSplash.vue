@@ -1,47 +1,54 @@
 <template>
   <section class="u-page splash">
+    <div class="title">
+      <h1>
+        Tech to Combat Sexual Assult
+      </h1>
+      <h3>
+        We are stronger. Together.
+      </h3>
+      <button>
+        Learn more
+      </button>
+    </div>
     <div class="quote">
       <h3>
         "why are you questioning the victim here? let's flip it. let's talk about what the predator is doing."
       </h3>
     </div>
-    <div class="title">
-      <h1>
-        Tech to Combat Sexual Assult
-      </h1>
-      <h2>
-        We are stronger. Together.
-      </h2>
-      <button>
-        Learn more
-      </button>
-    </div>
   </section>
 </template>
 
 <script>
+import NavBar from '@/components/NavBar'
+
 export default {
-  name: 'HomeSplash'
+  name: 'HomeSplash',
+  components: {
+    NavBar
+  }
 }
 </script>
 
 <style scoped lang="scss">
 .splash {
-  width: 100vw;
-  min-height: 45rem;
+  min-height: 40rem;
   background-image: url('~@/assets/person_background.png'), url('~@/assets/faces_background.png');
   background-size: contain, cover;
   background-repeat: no-repeat;
   background-position: 25% 100%, center;
   color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .quote {
-  padding-top: 10rem;
-  margin-left: 50vw;
-  width: 18rem;
+  width: 30%;
+  padding-top: 15rem;
 }
 .title {
-  margin-top: 10rem;
-  width: 25rem;
+  width: 40%;
+  margin-top: 25rem;
 }
 </style>
