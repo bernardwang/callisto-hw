@@ -45,15 +45,22 @@ export default {
 
 .splash {
   position: relative;
-  min-height: 100vh;
-  padding-bottom: 3rem;
+  height: 100vh;
   background-image: url('~@/assets/person_background.png'), url('~@/assets/faces_background.png');
   background-size: contain, cover;
   background-repeat: no-repeat;
   background-position: 25% 100%, center;
   color: $cl-white;
   @include breakpoint(medium) {
-    flex-direction: column;
+    height: auto;
+    .article-container {
+      flex-direction: column;
+    }
+    .article {
+      width: 100%;
+      padding: 0;
+      margin-top: 3rem;
+    }
 
     // Remove lines and scroll
     // TODO: find better way to handle responsiveness for visual elements
@@ -71,19 +78,13 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.article {
-  @include breakpoint(medium) {
-    width: 100%;
-    padding: 0;
-    margin-top: 3rem;
-  }
-}
 .right {
   width: 35%;
   margin-top: 9rem;
   padding-right: 2rem;
 }
 .left {
+  min-width: 30rem;
   width: 50%;
   margin-top: 14rem;
 }

@@ -1,10 +1,11 @@
 <template>
   <header class="navbar" role="banner">
     <router-link class="logo" to="/">
-      <img :src="logoSrc" alt="Callisto Logo">
+      <img class="logo-img" :src="logoSrc" alt="Callisto Logo">
     </router-link>
+      <NavBarIcon class="menu-icon" :open="menuOpen" :onClick="toggleMenu"/>
     <nav role="navigation" aria-label="Main Menu">
-      <ul class="nav-container">
+      <ul :class="navMenuClass">
         <li class="nav-item">
           <router-link class="nav-link" to="/get-involved">
             Get Involved
@@ -42,12 +43,30 @@
 
 <script>
 import logoSrc from '@/assets/callisto_logo.svg'
+import NavBarIcon from '@/components/NavBarIcon'
 
 export default {
   name: 'NavBar',
+  components: { NavBarIcon },
   data () {
     return {
-      logoSrc
+      logoSrc,
+      menuOpen: true
+    }
+  },
+  computed: {
+    navMenuClass: function () {
+      return {
+        'nav-menu': true,
+        'nav-menu-open': this.open
+      }
+    }
+  },
+  methods: {
+    toggleMenu: function () {
+      this.menuOpen = !this.menuOpen
+      this.navMenuClass['nav-menu-open'] = this.menuOpen
+      console.log(this.menuOpen)
     }
   }
 }
@@ -58,33 +77,53 @@ export default {
 
 .navbar {
   padding-top: 1rem;
+
+  // Breakpoint to transition menu
+  @include breakpoint(large) {
+    .menu-icon {
+      display: block;
+    }
+    .nav-menu {
+      flex-direction: column;
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+    .nav-menu-open {
+      display: flex;
+      background-color: rgba($cl-text-primary, 0.5);
+      padding: 1rem 0 2rem 0;
+    }
+    .nav-item {
+      width: 10rem;
+    }
+  }
 }
 .logo {
   position: absolute;
   top: 1.5rem;
   left: 3rem;
 }
-.nav-container {
+.nav-menu {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  @include breakpoint(large) {
-    flex-direction: column;
-  }
+  margin: 0;
+  z-index: 2;
 }
 .nav-item {
   display: inline-block;
   margin: 0 -0.1rem 0 -0.1rem;
-  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+  padding: 1.5rem;
   color: $cl-white;
   border-bottom: 1px solid $cl-white;
+  text-align: center;
   &:hover, &:focus {
     color: $cl-text-secondary;
     border-bottom: 1px solid $cl-text-secondary;
-  }
-  @include breakpoint(large) {
-    width: 10rem;
   }
 }
 .nav-link {
@@ -94,7 +133,6 @@ export default {
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
-  text-align: center;
   letter-spacing: 1px;
   transition: color $time-fast;
 }
