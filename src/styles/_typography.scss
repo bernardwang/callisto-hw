@@ -1,40 +1,27 @@
-$font-stack: 'Avenir', Helvetica, Arial, sans-serif;
-$header-stack: 'Avenir', Helvetica, Arial, sans-serif;
-
 #app {
-  font-family: $font-stack;
+  font-family: $open-sans-stack;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: $header-stack;
+h1, h2, h3, h4, h5, h6 {
+  margin: 1em 0 0.5em 0;
   font-weight: bold;
-  margin: 1em 0 0.5em;
 }
 
 // 1.414 type scale
-.h1, .h2 { line-height: 1.1; }
-.h3, .h4 { line-height: 1.3; }
-.h1 { font-size: 4rem; }
-.h2 { font-size: 2.83rem; }
-.h3 { font-size: 2rem; }
-.h4 { font-size: 1.414rem; }
-.h5 { font-size: 1rem; }
-.h6 { font-size: 0.7rem; }
-.p {
+h1 { font-size: 4rem; }
+h2 { font-size: 2.83rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.414rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.7rem; }
+p {
   font-size: 1rem;
+  font-family: $monteserrat-stack;
+  font-weight: 500;
   line-height: 1.5;
 }
 
-// modular scss pattern from http://thesassway.com/advanced/modular-css-typography
-.typography {
-  h1 { @extend .h1; }
-  h2 { @extend .h2; }
-  h3 { @extend .h3; }
-  h4 { @extend .h4; }
-  h5 { @extend .h5; }
-  h6 { @extend .h6; }
-  p { @extend .p; }
-}
-
+// TODO: create a typography component to organize by typefaces and text type
+// i.e. display, headline, subheading, body ...

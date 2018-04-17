@@ -1,13 +1,13 @@
 <template>
-  <section class="u-page products typography">
+  <section class="u-page products">
     <h2 class="title">
       Our Products
     </h2>
     <div class="card-container">
-      <div class="card campus">
-        <h5 class="label">
+      <article class="card campus" role="article">
+        <span class="label">
           Flagship
-        </h5>
+        </span>
         <h3 class="name">
           Callisto <span class="u-normal"> Campus </span>
         </h3>
@@ -27,11 +27,11 @@
         <Button class="button" variant="accent">
           More about Callisto Campus
         </Button>
-      </div>
-      <div class="card campus">
-        <h5 class="label">
+      </article>
+      <article class="card campus" role="article">
+        <span class="label">
           New
-        </h5>
+        </span>
         <h3 class="name">
           Callisto <span class="u-normal"> Expansion </span>
         </h3>
@@ -51,7 +51,7 @@
         <Button class="button" variant="accent">
           More about Callisto Expansion
         </Button>
-      </div>
+      </article>
     </div>
   </section>
 </template>
@@ -70,12 +70,14 @@ export default {
 
 .products {
   padding-top: 1rem;
-  padding-bottom: 3rem;
+  padding-bottom: 7rem;
   min-height: 30rem;
   background-color: $cl-bg-dark;
 }
 .title {
   width: 100%;
+  font-family: $playfair-stack;
+  font-size: 3.8rem;
   text-align: center;
   color: $cl-text-secondary;
 }
@@ -100,19 +102,20 @@ export default {
   }
 }
 .label {
+  font-family: $monteserrat-stack;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0;
 }
 .name {
   margin-top: 1rem;
-}
-.desc {
-  font-weight: 500;
+  font-family: $monteserrat-stack;
 }
 .feat {
   margin-top: 2rem;
   line-height: 2;
+  font-weight: 400;
 }
 .divider {
   border: 0.5px solid #ddd;
@@ -123,9 +126,9 @@ export default {
 }
 .button {
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 3rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 </style>

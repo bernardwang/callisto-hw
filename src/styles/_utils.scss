@@ -1,13 +1,18 @@
-
+// Default padding for page section
 .u-page {
   padding-left: 10vw;
   padding-right: 10vw;
+  @include breakpoint(large) {
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
   @include breakpoint(medium) {
     padding-left: 5vw;
     padding-right: 5vw;
   }
 }
 
+// Font weight utils
 .u-bold {
   font-weight: bold;
 }

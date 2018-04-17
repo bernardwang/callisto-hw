@@ -32,6 +32,7 @@ export default {
 .button {
   padding: 0.8rem 2.5rem 0.8rem 2.5rem;
   border: none;
+  font-family: $monteserrat-stack;
   font-weight: 500;
   font-size: 1rem;
   cursor: pointer;

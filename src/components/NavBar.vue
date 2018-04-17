@@ -1,41 +1,43 @@
 <template>
-  <nav class="navbar">
+  <header class="navbar" role="banner">
     <router-link class="logo" to="/">
       <img :src="logoSrc" alt="Callisto Logo">
     </router-link>
-    <ul class="nav-container" aria-label="Main Menu">
-      <li class="nav-item">
-        <router-link class="nav-link" to="/get-involved">
-          <h6 class="link-text"> Get Involved </h6>
-        </router-link>
-      </li>
-      <li class="nav-item">
-        <router-link class="nav-link" to="/who-we-are">
-          <h6 class="link-text"> Who We Are </h6>
-        </router-link>
-      </li>
-      <li class="nav-item">
-        <router-link class="nav-link" to="/what-we-do">
-          <h6 class="link-text"> What We Do </h6>
-        </router-link>
-      </li>
-      <li class="nav-item">
-        <router-link class="nav-link" to="/work-with-us">
-          <h6 class="link-text"> Work With Us </h6>
-        </router-link>
-      </li>
-      <li class="nav-item">
-        <router-link class="nav-link" to="/donate">
-          <h6 class="link-text"> Donate </h6>
-        </router-link>
-      </li>
-      <li class="nav-item">
-        <router-link class="nav-link" to="/contact">
-          <h6 class="link-text"> Contact </h6>
-        </router-link>
-      </li>
-    </ul>
-  </nav>
+    <nav role="navigation" aria-label="Main Menu">
+      <ul class="nav-container">
+        <li class="nav-item">
+          <router-link class="nav-link" to="/get-involved">
+            Get Involved
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/who-we-are">
+            Who We Are
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/what-we-do">
+            What We Do
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/work-with-us">
+            Work With Us
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/donate">
+            Donate
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/contact">
+            Contact
+          </router-link>
+        </li>
+      </ul>
+    </nav>
+  </header>
 </template>
 
 <script>
@@ -72,15 +74,14 @@ export default {
   }
 }
 .nav-item {
-  margin: 0 -0.1rem 0 -0.1rem;
-  padding: 0 1.5rem 1rem 1.5rem;
   display: inline-block;
+  margin: 0 -0.1rem 0 -0.1rem;
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
   color: $cl-white;
   border-bottom: 1px solid $cl-white;
-  //transition: color $time-fast, border $time-fast;
-  &:hover {
-    border-bottom: 1px solid $cl-text-secondary;
+  &:hover, &:focus {
     color: $cl-text-secondary;
+    border-bottom: 1px solid $cl-text-secondary;
   }
   @include breakpoint(large) {
     width: 10rem;
@@ -88,14 +89,13 @@ export default {
 }
 .nav-link {
   color: inherit;
+  font-family: $monteserrat-stack;
+  font-size: 0.8rem;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  transition: color $time-fast;
-}
-.link-text {
-  font-size: 0.8rem;
   letter-spacing: 1px;
+  transition: color $time-fast;
 }
 </style>

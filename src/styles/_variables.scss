@@ -1,19 +1,13 @@
-// Breakpoints
-$bp-large: 65rem;
-$bp-medium: 55rem;
-$bp-small: 30rem;
+// Typefaces
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600');
 
- @mixin breakpoint($point) {
-  @if $point == large {
-    @media (max-width: $bp-large) { @content; }
-  }
-   @else if $point == medium {
-    @media (max-width: $bp-medium) { @content; }
-  }
-  @else if $point == small {
-    @media (max-width: $bp-small) { @content; }
-  }
-}
+$playfair-stack: 'Playfair Display', 'Avenir', Helvetica, Arial, sans-serif;
+$oswald-stack: 'Oswald', 'Avenir', Helvetica, Arial, sans-serif;
+$open-sans-stack: 'Open Sans', 'Avenir', Helvetica, Arial, sans-serif;
+$monteserrat-stack: 'Monteserrat', 'Avenir', Helvetica, Arial, sans-serif;
 
 // Colors
 $cl-white: #ffffff;
@@ -24,6 +18,23 @@ $cl-text-accent: #385C6C;
 
 $cl-bg-light: $cl-white;
 $cl-bg-dark: #464D55;
+
+// Breakpoints
+$bp-large: 65rem;
+$bp-medium: 55rem;
+$bp-small: 30rem;
+
+@mixin breakpoint($point) {
+  @if $point == large {
+    @media (max-width: $bp-large) { @content; }
+  }
+   @else if $point == medium {
+    @media (max-width: $bp-medium) { @content; }
+  }
+  @else if $point == small {
+    @media (max-width: $bp-small) { @content; }
+  }
+}
 
 // Transistion times
 $time-fast: 0.3s;
