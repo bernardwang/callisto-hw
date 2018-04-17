@@ -2,22 +2,22 @@
   <section class="u-page splash" id="splash">
     <NavBar />
     <div class="article-container">
-      <article class="article left">
-        <h1 class="left-display">
+      <aside class="article quote" role="complementary">
+        <p class="quote-text headline">
+          'why are you questioning the victim here? let's flip it. let's talk about what the predator is doing.'
+        </p>
+      </aside>
+      <article class="article intro">
+        <h1 class="intro-display">
           Tech to Combat Sexual Assault
         </h1>
-        <p class="left-headline">
+        <p class="intro-headline">
           We are stronger. Together.
         </p>
         <Button variant="primary">
           Learn more
         </Button>
       </article>
-      <aside class="article right" role="complementary">
-        <p class="right-quote headline">
-          'why are you questioning the victim here? let's flip it. let's talk about what the predator is doing.'
-        </p>
-      </aside>
     </div>
     <button @click="scrollToAbout" class="scroll">
       <p class="scroll-text">
@@ -41,7 +41,7 @@ export default {
     scrollToAbout: function () {
       const aboutSection = document.querySelector('#about')
       if (aboutSection) {
-        aboutSection.scrollIntoView({ behavior: 'smooth' })
+        aboutSection.scrollIntoView({alignToTop: true, behavior: 'smooth' })
       }
     }
   }
@@ -53,61 +53,58 @@ export default {
 
 .splash {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url('~@/assets/person_background.png'), url('~@/assets/faces_background.png');
   background-size: contain, cover;
   background-repeat: no-repeat;
   background-position: 25% 100%, center;
   color: $cl-white;
+  overflow-x: hidden;
   @include breakpoint(medium) {
-    height: auto;
-    .article-container {
-      flex-direction: column;
-    }
-    .article {
+    // TODO: find better responsive solution for quote
+    .quote {
       width: 100%;
-      padding: 0;
-      margin-top: 3rem;
     }
 
     // Remove lines and scroll
-    // TODO: find better way to handle responsiveness for visual elements
-    .right-quote:before {
+    // TODO: find better responsive solution for line visual elements
+    .quote-text:before {
       border: none;
     }
-    .scroll {
-      display: none;
+
+    .scroll-text {
+      transform: rotate(0deg);
     }
   }
 }
 .article-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-end;
 }
-.right {
+.quote {
   width: 35%;
-  margin-top: 9rem;
-  padding-right: 2rem;
+  margin-top: 8rem;
 }
-.left {
-  min-width: 30rem;
-  width: 50%;
-  margin-top: 14rem;
+.intro {
+  width: 100%;
+  margin-bottom: 4rem;
 }
-.left-display {
+.intro-display {
+  max-width: 30rem;
   font-family: $playfair-stack;
   font-weight: 900;
+  margin: 0;
   margin-bottom: 1.5rem;
 }
-.left-headline {
+.intro-headline {
   font-family: $oswald-stack;
   font-weight: 500;
   font-size: 2rem;
   margin-top: 1.5rem;
 }
-.right-quote {
+.quote-text {
   position: relative;
   padding-right: 3rem;
   font-family: $oswald-stack;
@@ -118,8 +115,8 @@ export default {
     position: absolute;
     border-top: 1px solid $cl-text-secondary;
     top: 50%;
-    right: -11rem;
-    width: 13rem;
+    right: -9rem;
+    width: 10rem;
   }
 }
 .scroll {
@@ -127,7 +124,7 @@ export default {
   border: 0;
   background: transparent;
   width: 3rem;
-  left: 42%;
+  left: 41%;
   bottom: 1rem;
   transition: transform $time-normal;
   &:hover, &:focus {

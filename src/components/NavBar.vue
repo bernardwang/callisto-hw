@@ -121,6 +121,7 @@ export default {
   color: $cl-white;
   border-bottom: 1px solid $cl-white;
   text-align: center;
+  cursor: pointer;
   &:hover, &:focus {
     color: $cl-text-secondary;
     border-bottom: 1px solid $cl-text-secondary;
