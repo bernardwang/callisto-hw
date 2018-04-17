@@ -33,6 +33,7 @@ npm run unit
 # run all tests
 npm test
 ```
+I also added a command `npm run deploy` to deploy to github pages, but current it is not working because the build files are meant to be served through a server rather than static files. The files on master are modified as a quick fix for this, but running locally will work fine.
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
