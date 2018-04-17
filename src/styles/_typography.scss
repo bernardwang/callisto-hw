@@ -22,6 +22,10 @@ p {
   font-weight: 500;
   line-height: 1.5;
 }
+button {
+  font-family: $monteserrat-stack;
+  font-weight: 500;
+}
 
 // TODO: create a typography component to organize by typefaces and text type
 // i.e. display, headline, subheading, body ...

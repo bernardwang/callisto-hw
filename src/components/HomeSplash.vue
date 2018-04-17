@@ -1,5 +1,5 @@
 <template>
-  <section class="u-page splash">
+  <section class="u-page splash" id="splash">
     <NavBar />
     <div class="article-container">
       <article class="article left">
@@ -19,11 +19,11 @@
         </p>
       </aside>
     </div>
-    <div class="scroll">
+    <button @click="scrollToAbout" class="scroll">
       <p class="scroll-text">
         Scroll down
       </p>
-    </div>
+    </button>
   </section>
 </template>
 
@@ -36,6 +36,14 @@ export default {
   components: {
     Button,
     NavBar
+  },
+  methods: {
+    scrollToAbout: function () {
+      const aboutSection = document.querySelector('#about')
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
   }
 }
 </script>
@@ -116,11 +124,13 @@ export default {
 }
 .scroll {
   position: absolute;
+  border: 0;
+  background: transparent;
   width: 3rem;
   left: 42%;
   bottom: 1rem;
   transition: transform $time-normal;
-  &:hover {
+  &:hover, &:focus {
     transform: translateY(4px)
   }
 }
@@ -133,5 +143,6 @@ export default {
   font-size: 0.7rem;
   text-align: center;
   cursor: pointer;
+  color: $cl-white;
 }
 </style>

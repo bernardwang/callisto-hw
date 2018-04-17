@@ -41,21 +41,21 @@ export default {
 .variant-primary {
   background-color: $cl-white;
   color: $cl-text-primary;
-  &:hover {
+  &:hover, &:focus {
     @extend .variant-accent
   }
 }
 .variant-secondary {
   background-color: $cl-bg-dark;
   color: $cl-white;
-  &:hover {
+  &:hover, &:focus {
     @extend .variant-accent
   }
 }
 .variant-accent {
   background-color: $cl-text-accent;
   color: $cl-white;
-  &:hover {
+  &:hover, &:focus {
     @extend .variant-secondary
   }
 }

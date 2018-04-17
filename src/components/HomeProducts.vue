@@ -1,5 +1,5 @@
 <template>
-  <section class="u-page products">
+  <section class="u-page products" id="products">
     <h2 class="title">
       Our Products
     </h2>

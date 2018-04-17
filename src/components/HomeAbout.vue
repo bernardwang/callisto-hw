@@ -1,5 +1,5 @@
 <template>
-  <section class="u-page about">
+  <section class="u-page about" id="about">
     <article class="article who" role="article">
       <h2 class="title">
         Who we are

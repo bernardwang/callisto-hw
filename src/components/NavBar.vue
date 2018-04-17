@@ -51,7 +51,7 @@ export default {
   data () {
     return {
       logoSrc,
-      menuOpen: true
+      menuOpen: false,
     }
   },
   computed: {
@@ -78,7 +78,7 @@ export default {
 .navbar {
   padding-top: 1rem;
 
-  // Breakpoint to transition menu
+  // Breakpoint for menu transition
   @include breakpoint(large) {
     .menu-icon {
       display: block;

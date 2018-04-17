@@ -1,5 +1,5 @@
 <template>
-  <div @click="onClick" :class="iconClass">
+  <div @click="onClick" :class="iconClass" role="button" :aria-label="iconLabel" aria-haspopup="true"aria-controls="menu" >
     <span></span>
     <span></span>
     <span></span>
@@ -11,6 +11,9 @@ export default {
   name: 'HamburgerMenu',
   props: [ 'open', 'onClick' ],
   computed: {
+    iconLabel: function () {
+      return this.open ? "Close Menu" : "Open Menu"
+    },
     iconClass: function () {
       return {
         'icon': true,
