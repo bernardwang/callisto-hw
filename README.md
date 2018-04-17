@@ -60,4 +60,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## Risks
 - Mobile navigation menu could be improved and needs further testing especially with accessibility
+- Mobile spacing and readability needs to be adjusted
 - Page assets (images & web fonts) could be optimized to reduce load time
